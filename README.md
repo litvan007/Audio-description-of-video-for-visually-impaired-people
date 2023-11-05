@@ -1,6 +1,7 @@
-### тут название работы на английском
+### Audio description of video for visually impaired people
 
-тут краткий текст из тезисов, который показывает проблематику
+The development of online movie services has revealed the problem of video content accessibility on the Internet for people with disabilities, especially for those who have vision impairments. It is very important that the video on the device screen is understandable, accessible and convenient for people suffering from the disease. With the modern development of computing resources, machine learning technologies and big data, this problem can be solved by applying the listed tools. The aim of this research is to create a tool that will help people with vision impairments understand what is happening in a specific scene of a movie.
+
 
 ### Overall description of our method
 
