@@ -1,62 +1,32 @@
-## AITech Audio Accompaniment
+### тут название работы на английском
 
-Это репозиторий решения команды AITech на MTS True Tech Hack.
+тут краткий текст из тезисов, который показывает проблематику
 
-![img](readme_imgs/team.png)
+### Overall description of our method
 
-\([@ditengm](https://github.com/ditengm), [@m-danya](https://github.com/m-danya), [@litvan007](https://github.com/litvan007), [@In48semenov](https://github.com/In48semenov)\)
+**Interface**: user selects processed video or uploads a new one.
+**Splitting video to scenes**: video is send to served which splits it into scened with neural networks.
+**Scene description**: neural networks generate a description for every scene.
+**Voiceover**: neural networks generate voiceover for every scene.
+**Special player**: user watches video in a special player, which plays voiceover along with the original video.
 
-
-Мы участвовали в треке "Аудиосопровождение происходящего на экране для людей с нарушением зрения".
-Нужно было сделать инструмент, который поможет людям с нарушениям зрения понимать, что происходит в фильме. Мы разработали и презентовали следующее решение:
-
-![img](readme_imgs/pipeline.png)
-
-
-
-Двухминутное видео с демонстрацией решения для очной презентации: 
-
-[![img](readme_imgs/yt-preview.png)](https://youtu.be/qOqBgw-SQ18)
-
-
-### Визуальное описание бизнес-процесса, сервисов
-
-Визуально представлены на следующих двух схемах
+[Here is a video demonstration of our method](https://www.youtube.com/watch?v=qOqBgw-SQ18)
 
 ![img](readme_imgs/scheme.png)
 
-### Предложения по масштабированию
 
-- Улучшение существующей системы остановки видео
-- Вставка фонового звука фрагмента фильма поверх озвучки диктора для избежания потери атмосферы фильма
-- Лучший подбор гиперпараметров модели и доубучение модели
-- Создание рекомендательной системы на основе созданных текстовых описаний
+### Suggestions for future work
 
-### Как попробовать решение
+- Improvement of the existing video stop system
+- Inserting the background sound of a movie fragment over the voiceover of the announcer to avoid losing the atmosphere of the movie
+- Better selection of model hyperparameters and model training
+- Creation of a recommendation system based on the created text descriptions
 
-~~Решение развернуто на [aitech-kion.ru](https://aitech-kion.ru/), заходите!~~
-
-Решение было развернуто на [aitech-kion.ru](https://aitech-kion.ru/) во время хакатона.
-
-
-### Как запустить локально
-
-Решение полностью упаковано в Docker-контейнеры. Также написан конфиг для docker-compose, позволяющий поднять решение за одну команду из корневого каталога решения:
-
+### Running the system
+Just install docker and run:
 ```bash
-docker-compose up --build
+docker-compose up -d --build
 ```
+The building can take quite a long time, because we use several heavy neural networks.
 
-Сборка может происходить достаточно долго,потому что мы используем несколько тяжеловесных нейросетей. Но это только первый раз, после кэширования зависимостей решение, понятно, будет запускаться моментально.
-
-После окончания сборки решение будет доступно по адресу [http://localhost:1337](http://localhost:1337). Можете проверить и загрузить своё видео без очереди, в отличие от развёрнутого сайта, где в силу ограниченности ресурсов сервера мы сделали последовательную загрузку новых видео. При увеличении количества оперативной памяти и использовании хотя бы простейших видеокарт время обработки видео существенно снизится.
-
-### Dev notes: как деплоили на сервере с использованием SSL-сертификата
-
-Put `fullchain.crt` and `ssl.key` into `web-container/services/nginx`
-
-```bash
-docker-compose -f docker-compose.yml -f docker-compose.prod.yml up
-```
-
-> Note: `const BACKEND_ADDRESS` is redundant in the frontend. All paths should be relative.
+After that, the solution will be available at [http://localhost:1337 ](http://localhost:1337). You can upload your own video to test our system.
