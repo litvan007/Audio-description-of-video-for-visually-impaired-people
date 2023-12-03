@@ -11,7 +11,7 @@ The development of online movie services has revealed the problem of video conte
 **Voiceover**: neural networks generate voiceover for every scene.
 **Special player**: user watches video in a special player, which plays voiceover along with the original video.
 
-[Here is a video demonstration of our method](https://www.youtube.com/watch?v=qOqBgw-SQ18)
+[Here is a video demonstration of our method](https://youtu.be/OANhJ0FJlQ8)
 
 ![img](readme_imgs/scheme.png)
 
